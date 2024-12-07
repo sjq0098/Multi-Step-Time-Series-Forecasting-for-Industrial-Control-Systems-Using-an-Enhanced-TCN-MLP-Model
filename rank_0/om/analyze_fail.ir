@@ -1,0 +1,1491 @@
+# ===============================================================================================
+# The following shows the last analyze fail log message.
+# ===============================================================================================
+
+----------------------------------------------------
+- Caught exception:
+----------------------------------------------------
+Unsupported tensor type: <class 'mindspore._c_expression.typing.Int'>
+
+----------------------------------------------------
+- C++ Call Stack: (For framework developers)
+----------------------------------------------------
+mindspore\ccsrc\pybind_api\ir\tensor_py.cc:785 mindspore::tensor::RegMetaTensor::<lambda_0fa5f9da78c7e120ba8d2b421d8a6296>::operator ()
+
+----------------------------------------------------
+- The Traceback of Net Construct Code:
+----------------------------------------------------
+# 0 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 31~56
+                        return grad_(fn, weights)(*args)
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 37~39
+                        return grad_(fn, weights)(*args)
+                                     ^~
+# 2 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63
+# 3 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 37~39
+                        return grad_(fn, weights)(*args)
+                                     ^~
+# 4 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63
+# 5 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:13, 15~34
+# 6 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97
+# 7 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370~371, 4~108
+    if not isinstance(fill_value, ARRAY_TYPES):
+# 8 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~52
+# 9 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380~385, 4~46
+    if not _is_shape_empty(shape):
+# 10 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:387, 29~56
+    return _convert_64_to_32(empty_compile(dtype, shape))
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc9 in position 2166: invalid continuation byte
+
+At:
+  d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py(950): empty_compile
+  d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\primitive.py(934): __infer__
+
+
+----------------------------------------------------
+- The Traceback of Net Construct Code:
+----------------------------------------------------
+# 0 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 31~56
+                        return grad_(fn, weights)(*args)
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 37~39
+                        return grad_(fn, weights)(*args)
+                                     ^~
+# 2 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63
+# 3 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 37~39
+                        return grad_(fn, weights)(*args)
+                                     ^~
+# 4 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63
+# 5 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:13, 15~34
+# 6 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97
+# 7 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370~371, 4~108
+    if not isinstance(fill_value, ARRAY_TYPES):
+# 8 In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~52
+# 9 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380~385, 4~46
+    if not _is_shape_empty(shape):
+# 10 In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:387, 29~56
+    return _convert_64_to_32(empty_compile(dtype, shape))
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ===============================================================================================
+# The following shows the IR when the function graphs evaluation fails to help locate the problem.
+# You can search the last ------------------------> to the node which is evaluated failure.
+# Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.ir to get more instructions.
+# ===============================================================================================
+
+# IR entry: @after_grad_2001
+# Total subgraphs: 0
+
+# Total params: 14
+# Params:
+%para1_args0: <null>
+%para2_args1: <null>
+%para3_step_embedding.embedding_table: <Ref[Tensor[Float32]], (5, 30), ref_key=step_embedding.embedding_table>  :  has_default
+%para4_spatial_mlp.0.weight: <Ref[Tensor[Float32]], (64, 24), ref_key=spatial_mlp.0.weight>  :  has_default
+%para5_spatial_mlp.0.bias: <Ref[Tensor[Float32]], (64), ref_key=spatial_mlp.0.bias>  :  has_default
+%para6_spatial_mlp.2.weight: <Ref[Tensor[Float32]], (32, 64), ref_key=spatial_mlp.2.weight>  :  has_default
+%para7_spatial_mlp.2.bias: <Ref[Tensor[Float32]], (32), ref_key=spatial_mlp.2.bias>  :  has_default
+%para8_spatial_mlp.4.weight: <Ref[Tensor[Float32]], (23, 32), ref_key=spatial_mlp.4.weight>  :  has_default
+%para9_spatial_mlp.4.bias: <Ref[Tensor[Float32]], (23), ref_key=spatial_mlp.4.bias>  :  has_default
+%para10_bias_block.0.weight: <Ref[Tensor[Float32]], (23, 23), ref_key=bias_block.0.weight>  :  has_default
+%para11_bias_block.0.bias: <Ref[Tensor[Float32]], (23), ref_key=bias_block.0.bias>  :  has_default
+%para12_tcn.0.weight: <Ref[Tensor[Float32]], (1, 1, 3, 1), ref_key=tcn.0.weight>  :  has_default
+%para13_tcn.1.weight: <Ref[Tensor[Float32]], (1, 1, 3, 1), ref_key=tcn.1.weight>  :  has_default
+%para14_final_conv.weight: <Ref[Tensor[Float32]], (1, 1, 32, 1), ref_key=final_conv.weight>  :  has_default
+
+subgraph attr:
+subgraph instance: after_grad_2001 : 00000209F3694490
+# In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:604~606, 20~56/                    @jit(input_signature=dynamic_shape_inputs)/
+subgraph @after_grad_2001() {
+  %0(CNode_2023) = resolve(NameSpace[Entry: 'after_grad'], after_grad)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+  %1(CNode_2024) = MakeTuple(%para1_args0, %para2_args1)
+      : (<Tensor[Float32], (32, 30, 23)>, <Tensor[Float32], (32, 5, 23)>) -> (<Tuple[Tensor[Float32]*2], TupleShape((32, 30, 23), (32, 5, 23))>)
+      #scope: (Default)
+
+#------------------------> 0
+  %2(CNode_2025) = DoUnpackCall(%0, %1)
+      : (<Func, NoShape>, <Tuple[Tensor[Float32]*2], TupleShape((32, 30, 23), (32, 5, 23))>) -> (<null>)
+      #scope: (Default)
+  Return(%2)
+      : (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 24~56/                        return grad_(fn, weights)(*args)/
+}
+# Order:
+#   1: @after_grad_2001:CNode_2023{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Entry: 'after_grad', [2]: ValueNode<Symbol> after_grad}
+#   2: @after_grad_2001:CNode_2025{[0]: ValueNode<Primitive> DoUnpackCall, [1]: CNode_2023, [2]: CNode_2024}
+#   3: @after_grad_2001:CNode_2026{[0]: ValueNode<Primitive> Return, [1]: CNode_2025}
+
+
+subgraph attr:
+core: 1
+subgraph instance: UnpackCall_2002 : 00000209F369B960
+
+subgraph @UnpackCall_2002(%para0_Parameter_2003, %para0_Parameter_2004) {
+  %0(CNode_2027) = TupleGetItem(%para0_Parameter_2004, I64(0))
+      : (<Tuple[Tensor[Float32]*2], TupleShape((32, 30, 23), (32, 5, 23))>, <Int64, NoShape>) -> (<Tensor[Float32], (32, 30, 23)>)
+      #scope: (Default)
+  %1(CNode_2028) = TupleGetItem(%para0_Parameter_2004, I64(1))
+      : (<Tuple[Tensor[Float32]*2], TupleShape((32, 30, 23), (32, 5, 23))>, <Int64, NoShape>) -> (<Tensor[Float32], (32, 5, 23)>)
+      #scope: (Default)
+
+#------------------------> 1
+  %2(CNode_2029) = Parameter_2003(%0, %1)
+      : (<Tensor[Float32], (32, 30, 23)>, <Tensor[Float32], (32, 5, 23)>) -> (<null>)
+      #scope: (Default)
+  Return(%2)
+      : (<null>)
+      #scope: (Default)
+}
+# Order:
+#   1: @UnpackCall_2002:CNode_2029{[0]: param_Parameter_2003, [1]: CNode_2027, [2]: CNode_2028}
+#   2: @UnpackCall_2002:CNode_2030{[0]: ValueNode<Primitive> Return, [1]: CNode_2029}
+
+
+subgraph attr:
+subgraph instance: after_grad_2005 : 00000209F369F690
+# In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:604~606, 20~56/                    @jit(input_signature=dynamic_shape_inputs)/
+subgraph @after_grad_2005(%para0_args0, %para0_args1) {
+  %0(CNode_2031) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.ops.composite.base..<after_grad>'], grad_)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 31~36/                        return grad_(fn, weights)(*args)/
+  %1(CNode_2032) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.ops.composite.base..<after_grad>'], fn)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 37~39/                        return grad_(fn, weights)(*args)/
+  %2(CNode_2033) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.ops.composite.base..<after_grad>'], weights)
+      : (<External, NoShape>, <External, NoShape>) -> (<Tuple[Ref[Tensor[Float32]]*12], TupleShape((5, 30), (64, 24), (64), (32, 64), (32), (23, 32), (23), (23, 23), (23), (1, 1, 3, 1), (1, 1, 3, 1), (1, 1, 32, 1))>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 41~48/                        return grad_(fn, weights)(*args)/
+  %3(CNode_2034) = %0(%1, %2)
+      : (<Func, NoShape>, <Tuple[Ref[Tensor[Float32]]*12], TupleShape((5, 30), (64, 24), (64), (32, 64), (32), (23, 32), (23), (23, 23), (23), (1, 1, 3, 1), (1, 1, 3, 1), (1, 1, 32, 1))>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 31~49/                        return grad_(fn, weights)(*args)/
+  %4(CNode_2035) = MakeTuple(%para0_args0, %para0_args1)
+      : (<Tensor[Float32], (32, 30, 23)>, <Tensor[Float32], (32, 5, 23)>) -> (<Tuple[Tensor[Float32]*2], TupleShape((32, 30, 23), (32, 5, 23))>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:605, 36~40/                    def after_grad(*args):/
+
+#------------------------> 2
+  %5(CNode_2036) = DoUnpackCall(%3, %4)
+      : (<Func, NoShape>, <Tuple[Tensor[Float32]*2], TupleShape((32, 30, 23), (32, 5, 23))>) -> (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 31~56/                        return grad_(fn, weights)(*args)/
+  Return(%5)
+      : (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 24~56/                        return grad_(fn, weights)(*args)/
+}
+# Order:
+#   1: @after_grad_2005:CNode_2031{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.ops.composite.base..<after_grad>', [2]: ValueNode<Symbol> grad_}
+#   2: @after_grad_2005:CNode_2032{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.ops.composite.base..<after_grad>', [2]: ValueNode<Symbol> fn}
+#   3: @after_grad_2005:CNode_2033{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.ops.composite.base..<after_grad>', [2]: ValueNode<Symbol> weights}
+#   4: @after_grad_2001:CNode_2037{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   5: @after_grad_2005:CNode_2034{[0]: CNode_2031, [1]: CNode_2032, [2]: CNode_2033}
+#   6: @after_grad_2005:CNode_2038{[0]: ValueNode<UnpackGraphPrimitive> UnpackGraph, [1]: CNode_2032, [2]: CNode_2035}
+#   7: @after_grad_2005:CNode_2036{[0]: ValueNode<Primitive> DoUnpackCall, [1]: CNode_2034, [2]: CNode_2035}
+#   8: @after_grad_2005:CNode_2039{[0]: ValueNode<Primitive> Return, [1]: CNode_2036}
+
+
+subgraph attr:
+core: 1
+subgraph instance: UnpackCall_2006 : 00000209F36A4F90
+
+subgraph @UnpackCall_2006(%para0_Parameter_2007, %para0_Parameter_2008) {
+  %0(CNode_2040) = TupleGetItem(%para0_Parameter_2008, I64(0))
+      : (<Tuple[Tensor[Float32]*2], TupleShape((32, 30, 23), (32, 5, 23))>, <Int64, NoShape>) -> (<Tensor[Float32], (32, 30, 23)>)
+      #scope: (Default)
+  %1(CNode_2041) = TupleGetItem(%para0_Parameter_2008, I64(1))
+      : (<Tuple[Tensor[Float32]*2], TupleShape((32, 30, 23), (32, 5, 23))>, <Int64, NoShape>) -> (<Tensor[Float32], (32, 5, 23)>)
+      #scope: (Default)
+
+#------------------------> 3
+  %2(CNode_2042) = Parameter_2007(%0, %1)
+      : (<Tensor[Float32], (32, 30, 23)>, <Tensor[Float32], (32, 5, 23)>) -> (<null>)
+      #scope: (Default)
+  Return(%2)
+      : (<null>)
+      #scope: (Default)
+}
+# Order:
+#   1: @UnpackCall_2006:CNode_2042{[0]: param_Parameter_2007, [1]: CNode_2040, [2]: CNode_2041}
+#   2: @UnpackCall_2006:CNode_2043{[0]: ValueNode<Primitive> Return, [1]: CNode_2042}
+
+
+subgraph attr:
+core: 1
+k_graph: 1
+args_no_expand: 1
+subgraph instance: grad_multi_step_forward_fn_2009 : 00000209F36A28A0
+# In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:9~20, 0~31/
+subgraph @grad_multi_step_forward_fn_2009 parent: [subgraph @grad_multi_step_forward_fn_2044](%para0_grad_multi_step_forward_fn, %para0_grad_multi_step_forward_fn) {
+  %0(CNode_2045) = J(%para_Parameter_2046) primitive_attrs: {side_effect_propagate: I64(1)}
+      : (<Func, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+
+#------------------------> 4
+  %1(CNode_2047) = %0(%para0_grad_multi_step_forward_fn, %para0_grad_multi_step_forward_fn)
+      : (<Tensor[Float32], (32, 30, 23)>, <Tensor[Float32], (32, 5, 23)>) -> (<null>)
+      #scope: (Default)
+  %2(CNode_2048) = TupleGetItem(%1, I64(0))
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+  %3(CNode_2049) = TupleGetItem(%1, I64(1))
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+  %4(CNode_2050) = HyperMapPy_hyper_map[ones_like]{fn_leaf: MultitypeFuncGraph_ones_like{(TypeType), (CSRTensor), (Number), (COOTensor), (Tensor), (Func), (NoneType)}}(%2)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+  %5(CNode_2051) = %3(%4)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+  %6(CNode_2052) = TupleGetItem(%5, I64(0))
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+  %7(CNode_2053) = Partial(MultitypeFuncGraph_env_get{(EnvType, Tensor), (EnvType, MapTensor)}, %6) primitive_attrs: {side_effect_propagate: I64(1)}
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+  %8(CNode_2054) = HyperMap_hyper_map(%7, $(@grad_multi_step_forward_fn_2044:para_Parameter_2055))
+      : (<null>, <Tuple[Ref[Tensor[Float32]]*12], TupleShape((5, 30), (64, 24), (64), (32, 64), (32), (23, 32), (23), (23, 23), (23), (1, 1, 3, 1), (1, 1, 3, 1), (1, 1, 32, 1))>) -> (<null>)
+      #scope: (Default)
+  %9(CNode_2056) = MakeTuple(%2, %8)
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+  Return(%9)
+      : (<null>)
+      #scope: (Default)
+}
+# Order:
+#   1: @grad_multi_step_forward_fn_2009:CNode_2047{[0]: CNode_2045, [1]: param_grad_multi_step_forward_fn, [2]: param_grad_multi_step_forward_fn}
+#   2: @grad_multi_step_forward_fn_2009:CNode_2048{[0]: ValueNode<Primitive> TupleGetItem, [1]: CNode_2047, [2]: ValueNode<Int64Imm> 0}
+#   3: @grad_multi_step_forward_fn_2009:CNode_2049{[0]: ValueNode<Primitive> TupleGetItem, [1]: CNode_2047, [2]: ValueNode<Int64Imm> 1}
+#   4: @grad_multi_step_forward_fn_2009:CNode_2050{[0]: ValueNode<HyperMapPy> MetaFuncGraph-hyper_map[ones_like].708, [1]: CNode_2048}
+#   5: @grad_multi_step_forward_fn_2009:CNode_2051{[0]: CNode_2049, [1]: CNode_2050}
+#   6: @grad_multi_step_forward_fn_2009:CNode_2052{[0]: ValueNode<Primitive> TupleGetItem, [1]: CNode_2051, [2]: ValueNode<Int64Imm> 0}
+#   7: @grad_multi_step_forward_fn_2009:CNode_2053{[0]: ValueNode<Primitive> Partial, [1]: ValueNode<MultitypeFuncGraph> MetaFuncGraph-env_get.40, [2]: CNode_2052}
+#   8: @grad_multi_step_forward_fn_2009:CNode_2054{[0]: ValueNode<HyperMap> MetaFuncGraph-hyper_map.2057, [1]: CNode_2053, [2]: param_Parameter_2055}
+#   9: @grad_multi_step_forward_fn_2009:CNode_2056{[0]: ValueNode<Primitive> MakeTuple, [1]: CNode_2048, [2]: CNode_2054}
+#  10: @grad_multi_step_forward_fn_2009:CNode_2058{[0]: ValueNode<Primitive> Return, [1]: CNode_2056}
+
+
+subgraph attr:
+defer_inline: 1
+subgraph instance: multi_step_forward_fn_1954 : 00000209F369CA10
+# In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:9~20, 0~31/
+subgraph @multi_step_forward_fn_1954(%para0_x, %para0_label) {
+  %0(CNode_2059) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], mindspore)
+      : (<External, NoShape>, <External, NoShape>) -> (<External, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 21~30/
+  %1(CNode_2060) = getattr(%0, "numpy")
+      : (<External, NoShape>, <String, NoShape>) -> (<External, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 21~36/
+  %2(CNode_2061) = getattr(%1, "zeros_like")
+      : (<External, NoShape>, <String, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 21~47/
+  %3(CNode_2062) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], getitem)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 48~80/
+  %4(CNode_2063) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 54~79/
+  %5(CNode_2064) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 54~55/
+  %6(CNode_2065) = %5(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 54~55/
+  %7(CNode_2066) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 57~58/
+  %8(CNode_2067) = %7(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 57~58/
+  %9(CNode_2068) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], add)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 60~79/
+  %10(CNode_2069) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], PV_index)
+      : (<External, NoShape>, <External, NoShape>) -> (<List[Int64*9], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 60~68/
+  %11(CNode_2070) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], DV_index)
+      : (<External, NoShape>, <External, NoShape>) -> (<List[Int64*5], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape]>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 71~79/
+  %12(CNode_2071) = %9(%10, %11)
+      : (<List[Int64*9], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>, <List[Int64*5], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape]>) -> (<List[Int64*14], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 60~79/
+  %13(CNode_2072) = %4(%6, %8, %12)
+      : (<Slice[None : None : None], NoShape>, <Slice[None : None : None], NoShape>, <List[Int64*14], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>) -> (<Tuple[Slice[None : None : None]*2,List[Int64*14]], TupleShape(NoShape, NoShape, ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape])>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 54~79/
+  %14(CNode_2073) = %3(%para0_label, %13)
+      : (<Tensor[Float32], (32, 5, 23)>, <Tuple[Slice[None : None : None]*2,List[Int64*14]], TupleShape(NoShape, NoShape, ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape])>) -> (<Tensor[Float32], (32, 5, 14)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 48~80/
+  %15(muti_step_pred) = %2(%14)
+      : (<Tensor[Float32], (32, 5, 14)>) -> (<Tensor[Float32], (32, 5, 14)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 21~81/
+
+#------------------------> 5
+  %16(CNode_2074) = call @multi_step_forward_fn_2010(I64(0), %para0_x, %15)
+      : (<Int64, NoShape>, <Tensor[Float32], (32, 30, 23)>, <Tensor[Float32], (32, 5, 14)>) -> (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 37~39/                        return grad_(fn, weights)(*args)/
+  %17(CNode_2075) = GradAux_aux_fn(%16, Bool(1))
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+  Return(%17)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+}
+# Order:
+#   1: @multi_step_forward_fn_1954:CNode_2059{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> mindspore}
+#   2: @multi_step_forward_fn_1954:CNode_2060{[0]: ValueNode<Primitive> getattr, [1]: CNode_2059, [2]: ValueNode<StringImm> numpy}
+#   3: @multi_step_forward_fn_1954:CNode_2061{[0]: ValueNode<Primitive> getattr, [1]: CNode_2060, [2]: ValueNode<StringImm> zeros_like}
+#   4: @multi_step_forward_fn_1954:CNode_2062{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> getitem}
+#   5: @multi_step_forward_fn_1954:CNode_2063{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   6: @multi_step_forward_fn_1954:CNode_2064{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#   7: @multi_step_forward_fn_1954:CNode_2065{[0]: CNode_2064, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#   8: @multi_step_forward_fn_1954:CNode_2066{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#   9: @multi_step_forward_fn_1954:CNode_2067{[0]: CNode_2066, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  10: @multi_step_forward_fn_1954:CNode_2069{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> PV_index}
+#  11: @multi_step_forward_fn_1954:CNode_2070{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> DV_index}
+#  12: @multi_step_forward_fn_1954:CNode_2068{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> add}
+#  13: @multi_step_forward_fn_1954:CNode_2071{[0]: CNode_2068, [1]: CNode_2069, [2]: CNode_2070}
+#  14: @multi_step_forward_fn_1954:CNode_2072{[0]: CNode_2063, [1]: CNode_2065, [2]: CNode_2067, [3]: CNode_2071}
+#  15: @multi_step_forward_fn_1954:CNode_2073{[0]: CNode_2062, [1]: param_label, [2]: CNode_2072}
+#  16: @multi_step_forward_fn_1954:CNode_2076{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  18: @multi_step_forward_fn_1954:muti_step_pred{[0]: CNode_2061, [1]: CNode_2073}
+#  19: @multi_step_forward_fn_1954:CNode_2077{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> len}
+#  20: @multi_step_forward_fn_1954:CNode_2078{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> getitem}
+#  21: @multi_step_forward_fn_1954:CNode_2079{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> iter}
+#  22: @multi_step_forward_fn_1954:CNode_2080{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> range}
+#  23: @multi_step_forward_fn_1954:CNode_2081{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> horizon}
+#  24: @multi_step_forward_fn_1954:CNode_2082{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  26: @multi_step_forward_fn_1954:CNode_2083{[0]: CNode_2080, [1]: CNode_2081}
+#  27: @multi_step_forward_fn_1954:CNode_2084{[0]: CNode_2079, [1]: CNode_2083}
+#  28: @multi_step_forward_fn_1954:CNode_2085{[0]: CNode_2077, [1]: CNode_2084}
+#  29: @multi_step_forward_fn_1954:CNode_2086{[0]: ValueNode<FuncGraph> multi_step_forward_fn_2010, [1]: ValueNode<Int64Imm> 0, [2]: CNode_2087, [3]: param_x, [4]: CNode_2069, [5]: CNode_2070, [6]: muti_step_pred, [7]: CNode_2059, [8]: param_label, [9]: CNode_2088, [10]: CNode_2089}
+#  30: @multi_step_forward_fn_1954:CNode_2090{[0]: ValueNode<Primitive> Return, [1]: CNode_2075}
+#  31: @multi_step_forward_fn_1954:CNode_2087{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> sa_tcn_mlp}
+#  32: @multi_step_forward_fn_1954:CNode_2088{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> OP_index}
+#  33: @multi_step_forward_fn_1954:CNode_2089{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> loss_fn}
+#  34: @multi_step_forward_fn_1954:CNode_2074{[0]: ValueNode<FuncGraph> multi_step_forward_fn_2010, [1]: ValueNode<Int64Imm> 0, [2]: param_x, [3]: muti_step_pred}
+#  35: @multi_step_forward_fn_1954:CNode_2075{[0]: ValueNode<GradAux> MetaFuncGraph-aux_fn.2091, [1]: CNode_2074, [2]: ValueNode<BoolImm> true}
+
+
+subgraph attr:
+subgraph instance: multi_step_forward_fn_2010 : 00000209F369CFA0
+# In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:9~20, 0~31/
+subgraph @multi_step_forward_fn_2010 parent: [subgraph @multi_step_forward_fn_1954](%para0_@CNode_2011, %para0_phi_x, %para0_phi_muti_step_pred) {
+  %0(CNode_2077) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], len)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %1(CNode_2079) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], iter)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %2(CNode_2080) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], range)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12, 16~21/
+  %3(CNode_2081) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], horizon)
+      : (<External, NoShape>, <External, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12, 22~29/
+  %4(CNode_2083) = %2(%3)
+      : (<Int64, NoShape>) -> (<Tuple[Int64*5], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12, 16~30/
+  %5(CNode_2084) = %1(%4)
+      : (<Tuple[Int64*5], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape)>) -> (<Tuple[Int64*5], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %6(CNode_2085) = %0(%5)
+      : (<Tuple[Int64*5], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape)>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %7(CNode_2092) = MultitypeFuncGraph_less{(Number, Number), (String, String), (Tuple, Tuple), (Tensor, Tensor), (Number, Tensor), (Tensor, Number), (List, List)}(%para0_@CNode_2011, %6)
+      : (<Int64, NoShape>, <Int64, NoShape>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %8(CNode_2093) = Switch(%7, @multi_step_forward_fn_2012, @multi_step_forward_fn_2094)
+      : (<Bool, NoShape>, <Func, NoShape>, <Func, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+
+#------------------------> 8
+  %9(CNode_2095) = %8()
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  Return(%9)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+}
+# Order:
+#   1: @multi_step_forward_fn_2010:CNode_2092{[0]: ValueNode<MultitypeFuncGraph> MetaFuncGraph-less.18, [1]: param_@CNode_2011, [2]: CNode_2085}
+#   2: @multi_step_forward_fn_2010:CNode_2093{[0]: ValueNode<Primitive> Switch, [1]: CNode_2092, [2]: ValueNode<FuncGraph> multi_step_forward_fn_2012, [3]: ValueNode<FuncGraph> multi_step_forward_fn_2094}
+#   3: @multi_step_forward_fn_2010:CNode_2095{[0]: CNode_2093}
+#   4: @multi_step_forward_fn_2010:CNode_2096{[0]: ValueNode<Primitive> Return, [1]: CNode_2095}
+
+
+subgraph attr:
+subgraph instance: multi_step_forward_fn_2012 : 00000209F369D530
+# In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:9~20, 0~31/
+subgraph @multi_step_forward_fn_2012 parent: [subgraph @multi_step_forward_fn_2010]() {
+  %0(CNode_2011) = MultitypeFuncGraph_add{(Number, Number), (String, String), (Tensor, Tuple), (Number, Tensor), (Tensor, Number), (List, Tensor), (Tuple, Tensor), (NoneType, NoneType), (Tensor, List), (List, List), (Tensor, Tensor), (RowTensor, Tensor), (COOTensor, COOTensor), (Tuple, Tuple), (CSRTensor, CSRTensor), (COOTensor, Tensor), (Tensor, COOTensor), (Dictionary, Dictionary)}($(@multi_step_forward_fn_2010:para0_@CNode_2011), I64(1))
+      : (<Int64, NoShape>, <Int64, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %1(CNode_2097) = StopGradient(%0)
+      : (<Int64, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:9~20, 0~31/
+  %2(CNode_2098) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], setitem)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 8~63/
+  %3(CNode_2059) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], mindspore)
+      : (<External, NoShape>, <External, NoShape>) -> (<External, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 21~30/
+  %4(CNode_2099) = getattr(%3, "ops")
+      : (<External, NoShape>, <String, NoShape>) -> (<External, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~33/
+  %5(CNode_2100) = getattr(%4, "Concat")
+      : (<External, NoShape>, <String, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~40/
+  %6(CNode_2101) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_dict)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~48/
+  %7(CNode_2102) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~48/
+  %8(CNode_2103) = %7("axis")
+      : (<String, NoShape>) -> (<Tuple[String], TupleShape(NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~48/
+  %9(CNode_2104) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~48/
+  %10(CNode_2105) = %9(I64(1))
+      : (<Int64, NoShape>) -> (<Tuple[Int64], TupleShape(NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~48/
+  %11(CNode_2106) = %6(%8, %10)
+      : (<Tuple[String], TupleShape(NoShape)>, <Tuple[Int64], TupleShape(NoShape)>) -> (<Dictionary[[axis,],[Int64]], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~48/
+  %12(concat_op) = DoUnpackCall(%5, %11)
+      : (<Func, NoShape>, <Dictionary[[axis,],[Int64]], NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:15, 20~48/
+  %13(CNode_2107) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 22~41/
+  %14(CNode_2108) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], getitem)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 23~34/
+  %15(CNode_2109) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 25~33/
+  %16(CNode_2110) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 25~26/
+  %17(CNode_2111) = %16(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 25~26/
+  %18(CNode_2112) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 28~30/
+  %19(CNode_2113) = %18(I64(1), None, None)
+      : (<Int64, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[Int64 : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 28~30/
+  %20(CNode_2114) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 32~33/
+  %21(CNode_2115) = %20(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 32~33/
+  %22(CNode_2116) = %15(%17, %19, %21)
+      : (<Slice[None : None : None], NoShape>, <Slice[Int64 : None : None], NoShape>, <Slice[None : None : None], NoShape>) -> (<Tuple[Slice[None : None : None],Slice[Int64 : None : None],Slice[None : None : None]], TupleShape(NoShape, NoShape, NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 25~33/
+  %23(CNode_2117) = %14($(@multi_step_forward_fn_2010:para0_phi_x), %22)
+      : (<Tensor[Float32], (32, 30, 23)>, <Tuple[Slice[None : None : None],Slice[Int64 : None : None],Slice[None : None : None]], TupleShape(NoShape, NoShape, NoShape)>) -> (<Tensor[Float32], (32, 29, 23)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 23~34/
+  %24(CNode_2087) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], sa_tcn_mlp)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:13, 15~25/
+  %25(CNode_2078) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], getitem)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %26(CNode_2079) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], iter)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %27(CNode_2080) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], range)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12, 16~21/
+  %28(CNode_2081) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], horizon)
+      : (<External, NoShape>, <External, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12, 22~29/
+  %29(CNode_2083) = %27(%28)
+      : (<Int64, NoShape>) -> (<Tuple[Int64*5], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12, 16~30/
+  %30(CNode_2084) = %26(%29)
+      : (<Tuple[Int64*5], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape)>) -> (<Tuple[Int64*5], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  %31(step) = %25(%30, $(@multi_step_forward_fn_2010:para0_@CNode_2011))
+      : (<Tuple[Int64*5], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape)>, <Int64, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+
+#------------------------> 9
+  %32(pred) = %24($(@multi_step_forward_fn_2010:para0_phi_x), %31)
+      : (<Tensor[Float32], (32, 30, 23)>, <Int64, NoShape>) -> (<Any(Tensor)[Float32], (-2)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:13, 15~34/
+  %33(CNode_2118) = %13(%23, %32)
+      : (<Tensor[Float32], (32, 29, 23)>, <Any(Tensor)[Float32], (-2)>) -> (<Tuple[Tensor[Float32],Any(Tensor)[Float32]], TupleShape((32, 29, 23), (-2))>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 22~41/
+  %34(x) = %12(%33)
+      : (<Tuple[Tensor[Float32],Any(Tensor)[Float32]], TupleShape((32, 29, 23), (-2))>) -> (<Any(Tensor)[Float64], (-2)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:16, 12~42/
+  %35(CNode_2119) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 10~26/
+  %36(CNode_2120) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 10~11/
+  %37(CNode_2121) = %36(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 10~11/
+  %38(CNode_2122) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 13~16/
+  %39(CNode_2123) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], neg)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 13~15/
+  %40(CNode_2124) = %39(I64(1))
+      : (<Int64, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 13~15/
+  %41(CNode_2125) = %38(%40, None, None)
+      : (<Int64, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[Int64 : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 13~16/
+  %42(CNode_2088) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], OP_index)
+      : (<External, NoShape>, <External, NoShape>) -> (<List[Int64*9], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 54~62/
+  %43(CNode_2126) = %35(%37, %41, %42)
+      : (<Slice[None : None : None], NoShape>, <Slice[Int64 : None : None], NoShape>, <List[Int64*9], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>) -> (<Tuple[Slice[None : None : None],Slice[Int64 : None : None],List[Int64*9]], TupleShape(NoShape, NoShape, ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape])>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 10~26/
+  %44(CNode_2127) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], getitem)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 30~63/
+  %45(CNode_2128) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 36~62/
+  %46(CNode_2129) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 36~37/
+  %47(CNode_2130) = %46(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 36~37/
+  %48(CNode_2131) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 39~52/
+  %49(CNode_2132) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], add)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 44~52/
+  %50(CNode_2133) = %49(%31, I64(1))
+      : (<Int64, NoShape>, <Int64, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 44~52/
+  %51(CNode_2134) = %48(%31, %50, None)
+      : (<Int64, NoShape>, <Int64, NoShape>, <None, NoShape>) -> (<Slice[Int64 : Int64 : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 39~52/
+  %52(CNode_2135) = %45(%47, %51, %42)
+      : (<Slice[None : None : None], NoShape>, <Slice[Int64 : Int64 : None], NoShape>, <List[Int64*9], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>) -> (<Tuple[Slice[None : None : None],Slice[Int64 : Int64 : None],List[Int64*9]], TupleShape(NoShape, NoShape, ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape])>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 36~62/
+  %53(CNode_2136) = %44($(@multi_step_forward_fn_1954:para0_label), %52)
+      : (<Tensor[Float32], (32, 5, 23)>, <Tuple[Slice[None : None : None],Slice[Int64 : Int64 : None],List[Int64*9]], TupleShape(NoShape, NoShape, ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape])>) -> (<Tensor[Float32], (32, 1, 9)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 30~63/
+  %54(CNode_2137) = %2(%34, %43, %53)
+      : (<Any(Tensor)[Float64], (-2)>, <Tuple[Slice[None : None : None],Slice[Int64 : None : None],List[Int64*9]], TupleShape(NoShape, NoShape, ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape])>, <Tensor[Float32], (32, 1, 9)>) -> (<Any(Tensor)[Float32], (-2)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:17, 8~63/
+  %55(CNode_2138) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], setitem)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 8~77/
+  %56(CNode_2139) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 23~42/
+  %57(CNode_2140) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 23~24/
+  %58(CNode_2141) = %57(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 23~24/
+  %59(CNode_2142) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 26~39/
+  %60(CNode_2143) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], add)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 31~39/
+  %61(CNode_2144) = %60(%31, I64(1))
+      : (<Int64, NoShape>, <Int64, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 31~39/
+  %62(CNode_2145) = %59(%31, %61, None)
+      : (<Int64, NoShape>, <Int64, NoShape>, <None, NoShape>) -> (<Slice[Int64 : Int64 : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 26~39/
+  %63(CNode_2146) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 41~42/
+  %64(CNode_2147) = %63(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 41~42/
+  %65(CNode_2148) = %56(%58, %62, %64)
+      : (<Slice[None : None : None], NoShape>, <Slice[Int64 : Int64 : None], NoShape>, <Slice[None : None : None], NoShape>) -> (<Tuple[Slice[None : None : None],Slice[Int64 : Int64 : None],Slice[None : None : None]], TupleShape(NoShape, NoShape, NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 23~42/
+  %66(CNode_2149) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], getitem)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 46~77/
+  %67(CNode_2150) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 51~76/
+  %68(CNode_2151) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 51~52/
+  %69(CNode_2152) = %68(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 51~52/
+  %70(CNode_2153) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_slice)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 54~55/
+  %71(CNode_2154) = %70(None, None, None)
+      : (<None, NoShape>, <None, NoShape>, <None, NoShape>) -> (<Slice[None : None : None], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 54~55/
+  %72(CNode_2155) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], add)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 57~76/
+  %73(CNode_2069) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], PV_index)
+      : (<External, NoShape>, <External, NoShape>) -> (<List[Int64*9], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 60~68/
+  %74(CNode_2070) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], DV_index)
+      : (<External, NoShape>, <External, NoShape>) -> (<List[Int64*5], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape]>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:10, 71~79/
+  %75(CNode_2156) = %72(%73, %74)
+      : (<List[Int64*9], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>, <List[Int64*5], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape]>) -> (<List[Int64*14], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 57~76/
+  %76(CNode_2157) = %67(%69, %71, %75)
+      : (<Slice[None : None : None], NoShape>, <Slice[None : None : None], NoShape>, <List[Int64*14], ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape]>) -> (<Tuple[Slice[None : None : None]*2,List[Int64*14]], TupleShape(NoShape, NoShape, ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape])>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 51~76/
+  %77(CNode_2158) = %66(%32, %76)
+      : (<Any(Tensor)[Float32], (-2)>, <Tuple[Slice[None : None : None]*2,List[Int64*14]], TupleShape(NoShape, NoShape, ListShape[NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape, NoShape])>) -> (<Any(Tensor)[Float32], (-2)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 46~77/
+  %78(CNode_2159) = %55($(@multi_step_forward_fn_2010:para0_phi_muti_step_pred), %65, %77)
+      : (<Tensor[Float32], (32, 5, 14)>, <Tuple[Slice[None : None : None],Slice[Int64 : Int64 : None],Slice[None : None : None]], TupleShape(NoShape, NoShape, NoShape)>, <Any(Tensor)[Float32], (-2)>) -> (<Any(Tensor)[Float32], (-2)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:14, 8~77/
+
+#------------------------> 7
+  %79(CNode_2160) = call @multi_step_forward_fn_2010(%0, %54, %78)
+      : (<Int64, NoShape>, <Any(Tensor)[Float32], (-2)>, <Any(Tensor)[Float32], (-2)>) -> (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\ops\composite\base.py:606, 37~39/                        return grad_(fn, weights)(*args)/
+  %80(CNode_2161) = Depend(%79, %1) primitive_attrs: {side_effect_propagate: I64(1)} cnode_attrs: {topo_sort_rhs_first: Bool(1)}
+      : (<null>, <Int64, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+  Return(%80)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\2313859533.py:12~17, 4~63/
+}
+# Order:
+#   1: @multi_step_forward_fn_2012:step{[0]: CNode_2078, [1]: CNode_2084, [2]: param_@CNode_2011}
+#   2: @multi_step_forward_fn_2012:CNode_2011{[0]: ValueNode<MultitypeFuncGraph> MetaFuncGraph-add.6, [1]: param_@CNode_2011, [2]: ValueNode<Int64Imm> 1}
+#   3: @multi_step_forward_fn_2012:CNode_2162{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   5: @multi_step_forward_fn_2012:pred{[0]: CNode_2087, [1]: param_phi_x, [2]: step}
+#   6: @multi_step_forward_fn_2012:CNode_2149{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> getitem}
+#   7: @multi_step_forward_fn_2012:CNode_2150{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   8: @multi_step_forward_fn_2012:CNode_2151{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#   9: @multi_step_forward_fn_2012:CNode_2152{[0]: CNode_2151, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  10: @multi_step_forward_fn_2012:CNode_2153{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  11: @multi_step_forward_fn_2012:CNode_2154{[0]: CNode_2153, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  12: @multi_step_forward_fn_2012:CNode_2155{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> add}
+#  13: @multi_step_forward_fn_2012:CNode_2156{[0]: CNode_2155, [1]: CNode_2069, [2]: CNode_2070}
+#  14: @multi_step_forward_fn_2012:CNode_2157{[0]: CNode_2150, [1]: CNode_2152, [2]: CNode_2154, [3]: CNode_2156}
+#  15: @multi_step_forward_fn_2012:CNode_2158{[0]: CNode_2149, [1]: pred, [2]: CNode_2157}
+#  16: @multi_step_forward_fn_2012:CNode_2138{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> setitem}
+#  17: @multi_step_forward_fn_2012:CNode_2139{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  18: @multi_step_forward_fn_2012:CNode_2140{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  19: @multi_step_forward_fn_2012:CNode_2141{[0]: CNode_2140, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  20: @multi_step_forward_fn_2012:CNode_2142{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  21: @multi_step_forward_fn_2012:CNode_2143{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> add}
+#  22: @multi_step_forward_fn_2012:CNode_2144{[0]: CNode_2143, [1]: step, [2]: ValueNode<Int64Imm> 1}
+#  23: @multi_step_forward_fn_2012:CNode_2145{[0]: CNode_2142, [1]: step, [2]: CNode_2144, [3]: ValueNode<None> None}
+#  24: @multi_step_forward_fn_2012:CNode_2146{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  25: @multi_step_forward_fn_2012:CNode_2147{[0]: CNode_2146, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  26: @multi_step_forward_fn_2012:CNode_2148{[0]: CNode_2139, [1]: CNode_2141, [2]: CNode_2145, [3]: CNode_2147}
+#  27: @multi_step_forward_fn_2012:CNode_2159{[0]: CNode_2138, [1]: param_phi_muti_step_pred, [2]: CNode_2148, [3]: CNode_2158}
+#  28: @multi_step_forward_fn_2012:CNode_2099{[0]: ValueNode<Primitive> getattr, [1]: CNode_2059, [2]: ValueNode<StringImm> ops}
+#  29: @multi_step_forward_fn_2012:CNode_2100{[0]: ValueNode<Primitive> getattr, [1]: CNode_2099, [2]: ValueNode<StringImm> Concat}
+#  30: @multi_step_forward_fn_2012:CNode_2102{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  31: @multi_step_forward_fn_2012:CNode_2103{[0]: CNode_2102, [1]: ValueNode<StringImm> axis}
+#  32: @multi_step_forward_fn_2012:CNode_2104{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  33: @multi_step_forward_fn_2012:CNode_2105{[0]: CNode_2104, [1]: ValueNode<Int64Imm> 1}
+#  34: @multi_step_forward_fn_2012:CNode_2101{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_dict}
+#  35: @multi_step_forward_fn_2012:CNode_2106{[0]: CNode_2101, [1]: CNode_2103, [2]: CNode_2105}
+#  36: @multi_step_forward_fn_2012:concat_op{[0]: ValueNode<Primitive> DoUnpackCall, [1]: CNode_2100, [2]: CNode_2106}
+#  37: @multi_step_forward_fn_2012:CNode_2107{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  38: @multi_step_forward_fn_2012:CNode_2108{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> getitem}
+#  39: @multi_step_forward_fn_2012:CNode_2109{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  40: @multi_step_forward_fn_2012:CNode_2110{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  41: @multi_step_forward_fn_2012:CNode_2111{[0]: CNode_2110, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  42: @multi_step_forward_fn_2012:CNode_2112{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  43: @multi_step_forward_fn_2012:CNode_2113{[0]: CNode_2112, [1]: ValueNode<Int64Imm> 1, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  44: @multi_step_forward_fn_2012:CNode_2114{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  45: @multi_step_forward_fn_2012:CNode_2115{[0]: CNode_2114, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  46: @multi_step_forward_fn_2012:CNode_2116{[0]: CNode_2109, [1]: CNode_2111, [2]: CNode_2113, [3]: CNode_2115}
+#  47: @multi_step_forward_fn_2012:CNode_2117{[0]: CNode_2108, [1]: param_phi_x, [2]: CNode_2116}
+#  48: @multi_step_forward_fn_2012:CNode_2118{[0]: CNode_2107, [1]: CNode_2117, [2]: pred}
+#  49: @multi_step_forward_fn_2012:CNode_2163{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  51: @multi_step_forward_fn_2012:x{[0]: concat_op, [1]: CNode_2118}
+#  52: @multi_step_forward_fn_2012:CNode_2127{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> getitem}
+#  53: @multi_step_forward_fn_2012:CNode_2128{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  54: @multi_step_forward_fn_2012:CNode_2129{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  55: @multi_step_forward_fn_2012:CNode_2130{[0]: CNode_2129, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  56: @multi_step_forward_fn_2012:CNode_2131{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  57: @multi_step_forward_fn_2012:CNode_2132{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> add}
+#  58: @multi_step_forward_fn_2012:CNode_2133{[0]: CNode_2132, [1]: step, [2]: ValueNode<Int64Imm> 1}
+#  59: @multi_step_forward_fn_2012:CNode_2134{[0]: CNode_2131, [1]: step, [2]: CNode_2133, [3]: ValueNode<None> None}
+#  60: @multi_step_forward_fn_2012:CNode_2135{[0]: CNode_2128, [1]: CNode_2130, [2]: CNode_2134, [3]: CNode_2088}
+#  61: @multi_step_forward_fn_2012:CNode_2136{[0]: CNode_2127, [1]: param_label, [2]: CNode_2135}
+#  62: @multi_step_forward_fn_2012:CNode_2098{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> setitem}
+#  63: @multi_step_forward_fn_2012:CNode_2119{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  64: @multi_step_forward_fn_2012:CNode_2120{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  65: @multi_step_forward_fn_2012:CNode_2121{[0]: CNode_2120, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  66: @multi_step_forward_fn_2012:CNode_2122{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_slice}
+#  67: @multi_step_forward_fn_2012:CNode_2123{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> neg}
+#  68: @multi_step_forward_fn_2012:CNode_2124{[0]: CNode_2123, [1]: ValueNode<Int64Imm> 1}
+#  69: @multi_step_forward_fn_2012:CNode_2125{[0]: CNode_2122, [1]: CNode_2124, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  70: @multi_step_forward_fn_2012:CNode_2126{[0]: CNode_2119, [1]: CNode_2121, [2]: CNode_2125, [3]: CNode_2088}
+#  71: @multi_step_forward_fn_2012:CNode_2137{[0]: CNode_2098, [1]: x, [2]: CNode_2126, [3]: CNode_2136}
+#  72: @multi_step_forward_fn_2012:CNode_2164{[0]: ValueNode<FuncGraph> multi_step_forward_fn_2010, [1]: CNode_2011, [2]: CNode_2087, [3]: CNode_2137, [4]: CNode_2069, [5]: CNode_2070, [6]: CNode_2159, [7]: CNode_2059, [8]: param_label, [9]: CNode_2088, [10]: CNode_2089}
+#  74: @multi_step_forward_fn_2012:CNode_2165{[0]: ValueNode<Primitive> Return, [1]: CNode_2161}
+#  75: @multi_step_forward_fn_2012:CNode_2160{[0]: ValueNode<FuncGraph> multi_step_forward_fn_2010, [1]: CNode_2011, [2]: CNode_2137, [3]: CNode_2159}
+
+
+subgraph attr:
+training: 1
+subgraph instance: __main___TCN_MLP_with_Bias_Block_construct_2013 : 00000209AEDBC650
+# In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:36~61, 4~16/
+subgraph @__main___TCN_MLP_with_Bias_Block_construct_2013(%para0_x, %para0_iter_step) {
+  %0(CNode_2166) = resolve(NameSpace[ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>'], final_conv)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:58, 12~27/
+  %1(CNode_2167) = resolve(NameSpace[ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>'], tcn)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:55, 12~20/
+  %2(CNode_2168) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], add)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:51, 12~24/
+  %3(CNode_2169) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], add)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:51, 12~17/
+  %4(CNode_2170) = resolve(NameSpace[ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>'], spatial_mlp)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:47, 12~28/
+  %5(CNode_2171) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], mindspore)
+      : (<External, NoShape>, <External, NoShape>) -> (<External, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~36/
+  %6(CNode_2172) = getattr(%5, "ops")
+      : (<External, NoShape>, <String, NoShape>) -> (<External, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~33/
+  %7(CNode_2173) = getattr(%6, "Concat")
+      : (<External, NoShape>, <String, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~40/
+  %8(CNode_2174) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_dict)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~48/
+  %9(CNode_2175) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~48/
+  %10(CNode_2176) = %9("axis")
+      : (<String, NoShape>) -> (<Tuple[String], TupleShape(NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~48/
+  %11(CNode_2177) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~48/
+  %12(CNode_2178) = %11(I64(2))
+      : (<Int64, NoShape>) -> (<Tuple[Int64], TupleShape(NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~48/
+  %13(CNode_2179) = %8(%10, %12)
+      : (<Tuple[String], TupleShape(NoShape)>, <Tuple[Int64], TupleShape(NoShape)>) -> (<Dictionary[[axis,],[Int64]], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~48/
+  %14(concat_op) = DoUnpackCall(%7, %13)
+      : (<Func, NoShape>, <Dictionary[[axis,],[Int64]], NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:42, 20~48/
+  %15(CNode_2180) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:44, 23~43/
+  %16(CNode_2181) = resolve(NameSpace[ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>'], step_embedding)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:39, 25~44/
+  %17(CNode_2182) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_dict)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~43/
+  %18(CNode_2183) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~43/
+  %19(CNode_2184) = %18()
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~43/
+  %20(CNode_2185) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~43/
+  %21(CNode_2186) = %20()
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~43/
+  %22(CNode_2187) = %17(%19, %21)
+      : (<Tuple[], TupleShape()>, <Tuple[], TupleShape()>) -> (<Dictionary[[],[]], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~43/
+  %23(CNode_2171) = PyInterpret(Script['mindspore.Tensor'], InterpretedObject[PythonObject(type: <class 'dict'>, value: {'mindspore': <module 'mindspore' from 'd:\\withoutchinese_anaconda\\envs\\TSF_M\\Lib\\site-packages\\mindspore\\__init__.py'>})], %22) primitive_attrs: {side_effect_io: Bool(1)}
+      : (<String, NoShape>, <External, NoShape>, <Dictionary[[],[]], NoShape>) -> (<TypeType, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~36/
+  %24(CNode_2188) = resolve(NameSpace[SymbolStr: 'Namespace:__main__'], mnp)
+      : (<External, NoShape>, <External, NoShape>) -> (<External, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~47/
+  %25(CNode_2189) = getattr(%24, "full")
+      : (<External, NoShape>, <String, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~52/
+  %26(CNode_2190) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+  %27(CNode_2191) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 53~68/
+  %28(CNode_2192) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], getitem)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 54~64/
+  %29(CNode_2193) = getattr(%para0_x, "shape")
+      : (<Any(Tensor)[Float32], (-2)>, <String, NoShape>) -> (<Any(Tensor)[Float32], (-2)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 54~61/
+  %30(CNode_2194) = %28(%29, I64(0))
+      : (<Any(Tensor)[Float32], (-2)>, <Int64, NoShape>) -> (<Any(Tensor)[Float32], (-2)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 54~64/
+  %31(CNode_2195) = %27(%30, I64(1))
+      : (<Any(Tensor)[Float32], (-2)>, <Int64, NoShape>) -> (<Tuple[Any(Tensor)[Float32],Int64], TupleShape((-2), NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 53~68/
+  %32(CNode_2196) = %26(%31, %para0_iter_step)
+      : (<Tuple[Any(Tensor)[Float32],Int64], TupleShape((-2), NoShape)>, <Int64, NoShape>) -> (<Tuple[Tuple[Any(Tensor)[Float32],Int64],Int64], TupleShape(TupleShape((-2), NoShape), NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+  %33(CNode_2197) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], make_dict)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+  %34(CNode_2198) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+  %35(CNode_2199) = %34("dtype")
+      : (<String, NoShape>) -> (<Tuple[String], TupleShape(NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+  %36(CNode_2200) = resolve(NameSpace[CommonOPS: 'Namespace:mindspore._extends.parse.trope'], MakeTuple)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+  %37(CNode_2201) = getattr(%24, "int32")
+      : (<External, NoShape>, <String, NoShape>) -> (<TypeType, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 87~96/
+  %38(CNode_2202) = %36(%37)
+      : (<TypeType, NoShape>) -> (<Tuple[TypeType], TupleShape(NoShape)>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+  %39(CNode_2203) = %33(%35, %38)
+      : (<Tuple[String], TupleShape(NoShape)>, <Tuple[TypeType], TupleShape(NoShape)>) -> (<Dictionary[[dtype,],[TypeType]], NoShape>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+
+#------------------------> 10
+  %40(CNode_2204) = DoUnpackCall(%25, %32, %39)
+      : (<Func, NoShape>, <Tuple[Tuple[Any(Tensor)[Float32],Int64],Int64], TupleShape(TupleShape((-2), NoShape), NoShape)>, <Dictionary[[dtype,],[TypeType]], NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~97/
+  %41(iter_step_tensor) = %23(%40)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 27~98/
+  %42(step_embedding) = %16(%41)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:39, 25~62/
+  %43(CNode_2205) = getattr(%42, "swapaxes")
+      : (<null>, <String, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:43, 26~49/
+  %44(step_embedding_) = %43(I64(1), I64(2))
+      : (<Int64, NoShape>, <Int64, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:43, 26~55/
+  %45(CNode_2206) = %15(%para0_x, %44)
+      : (<Any(Tensor)[Float32], (-2)>, <null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:44, 23~43/
+  %46(x_) = %14(%45)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:44, 13~44/
+  %47(h) = %4(%46)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:47, 12~32/
+  %48(CNode_2207) = %3(%para0_x, %47)
+      : (<Any(Tensor)[Float32], (-2)>, <null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:51, 12~17/
+  %49(CNode_2208) = resolve(NameSpace[ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>'], bias_block)
+      : (<External, NoShape>, <External, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:50, 15~30/
+  %50(bias) = %49(%47)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:50, 15~33/
+  %51(x) = %2(%48, %50)
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:51, 12~24/
+  %52(CNode_2209) = getattr(%51, "unsqueeze")
+      : (<null>, <String, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:54, 12~23/
+  %53(x) = %52(I64(1))
+      : (<Int64, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:54, 12~26/
+  %54(x) = %1(%53)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:55, 12~23/
+  %55(y) = %0(%54)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:58, 12~30/
+  %56(CNode_2210) = getattr(%55, "squeeze")
+      : (<null>, <String, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:59, 12~21/
+  %57(y) = %56(I64(1))
+      : (<Int64, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:59, 12~24/
+  Return(%57)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:61, 8~16/
+}
+# Order:
+#   1: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2171{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> mindspore}
+#   2: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2183{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   3: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2184{[0]: CNode_2183}
+#   4: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2185{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   5: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2186{[0]: CNode_2185}
+#   6: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2182{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_dict}
+#   7: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2187{[0]: CNode_2182, [1]: CNode_2184, [2]: CNode_2186}
+#   8: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2171{[0]: ValueNode<Primitive> PyInterpret, [1]: ValueNode<Script> 'mindspore.Tensor', [2]: ValueNode<InterpretedObject> PythonObject(type: <class 'dict'>, value: {'mindspore': <module 'mindspore' from 'd:\\withoutchinese_anaconda\\envs\\TSF_M\\Lib\\site-packages\\mindspore\\__init__.py'>}), [3]: CNode_2187}
+#   9: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2188{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:__main__', [2]: ValueNode<Symbol> mnp}
+#  10: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2189{[0]: ValueNode<Primitive> getattr, [1]: CNode_2188, [2]: ValueNode<StringImm> full}
+#  11: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2191{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  12: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2192{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> getitem}
+#  13: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2193{[0]: ValueNode<Primitive> getattr, [1]: param_x, [2]: ValueNode<StringImm> shape}
+#  14: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2194{[0]: CNode_2192, [1]: CNode_2193, [2]: ValueNode<Int64Imm> 0}
+#  15: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2195{[0]: CNode_2191, [1]: CNode_2194, [2]: ValueNode<Int64Imm> 1}
+#  16: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2190{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  17: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2196{[0]: CNode_2190, [1]: CNode_2195, [2]: param_iter_step}
+#  18: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2201{[0]: ValueNode<Primitive> getattr, [1]: CNode_2188, [2]: ValueNode<StringImm> int32}
+#  19: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2198{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  20: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2199{[0]: CNode_2198, [1]: ValueNode<StringImm> dtype}
+#  21: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2200{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  22: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2202{[0]: CNode_2200, [1]: CNode_2201}
+#  23: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2197{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_dict}
+#  24: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2203{[0]: CNode_2197, [1]: CNode_2199, [2]: CNode_2202}
+#  25: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2204{[0]: ValueNode<Primitive> DoUnpackCall, [1]: CNode_2189, [2]: CNode_2196, [3]: CNode_2203}
+#  26: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2211{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  28: @__main___TCN_MLP_with_Bias_Block_construct_2013:iter_step_tensor{[0]: CNode_2171, [1]: CNode_2204}
+#  29: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2181{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>', [2]: ValueNode<Symbol> step_embedding}
+#  30: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2212{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  32: @__main___TCN_MLP_with_Bias_Block_construct_2013:step_embedding{[0]: CNode_2181, [1]: iter_step_tensor}
+#  33: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2172{[0]: ValueNode<Primitive> getattr, [1]: CNode_2171, [2]: ValueNode<StringImm> ops}
+#  34: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2173{[0]: ValueNode<Primitive> getattr, [1]: CNode_2172, [2]: ValueNode<StringImm> Concat}
+#  35: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2175{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  36: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2176{[0]: CNode_2175, [1]: ValueNode<StringImm> axis}
+#  37: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2177{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  38: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2178{[0]: CNode_2177, [1]: ValueNode<Int64Imm> 2}
+#  39: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2174{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> make_dict}
+#  40: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2179{[0]: CNode_2174, [1]: CNode_2176, [2]: CNode_2178}
+#  41: @__main___TCN_MLP_with_Bias_Block_construct_2013:concat_op{[0]: ValueNode<Primitive> DoUnpackCall, [1]: CNode_2173, [2]: CNode_2179}
+#  42: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2205{[0]: ValueNode<Primitive> getattr, [1]: step_embedding, [2]: ValueNode<StringImm> swapaxes}
+#  43: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2213{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  45: @__main___TCN_MLP_with_Bias_Block_construct_2013:step_embedding_{[0]: CNode_2205, [1]: ValueNode<Int64Imm> 1, [2]: ValueNode<Int64Imm> 2}
+#  46: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2180{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  47: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2206{[0]: CNode_2180, [1]: param_x, [2]: step_embedding_}
+#  48: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2214{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  50: @__main___TCN_MLP_with_Bias_Block_construct_2013:x_{[0]: concat_op, [1]: CNode_2206}
+#  51: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2170{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>', [2]: ValueNode<Symbol> spatial_mlp}
+#  52: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2215{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  54: @__main___TCN_MLP_with_Bias_Block_construct_2013:h{[0]: CNode_2170, [1]: x_}
+#  55: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2208{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>', [2]: ValueNode<Symbol> bias_block}
+#  56: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2216{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  58: @__main___TCN_MLP_with_Bias_Block_construct_2013:bias{[0]: CNode_2208, [1]: h}
+#  59: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2169{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> add}
+#  60: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2207{[0]: CNode_2169, [1]: param_x, [2]: h}
+#  61: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2168{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> add}
+#  62: @__main___TCN_MLP_with_Bias_Block_construct_2013:x{[0]: CNode_2168, [1]: CNode_2207, [2]: bias}
+#  63: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2209{[0]: ValueNode<Primitive> getattr, [1]: x, [2]: ValueNode<StringImm> unsqueeze}
+#  64: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2217{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  66: @__main___TCN_MLP_with_Bias_Block_construct_2013:x{[0]: CNode_2209, [1]: ValueNode<Int64Imm> 1}
+#  67: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2167{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>', [2]: ValueNode<Symbol> tcn}
+#  68: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2218{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  70: @__main___TCN_MLP_with_Bias_Block_construct_2013:x{[0]: CNode_2167, [1]: x}
+#  71: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2166{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:__main__..<TCN_MLP_with_Bias_Block::2240363511248>', [2]: ValueNode<Symbol> final_conv}
+#  72: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2219{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  74: @__main___TCN_MLP_with_Bias_Block_construct_2013:y{[0]: CNode_2166, [1]: x}
+#  75: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2210{[0]: ValueNode<Primitive> getattr, [1]: y, [2]: ValueNode<StringImm> squeeze}
+#  76: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2220{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  78: @__main___TCN_MLP_with_Bias_Block_construct_2013:y{[0]: CNode_2210, [1]: ValueNode<Int64Imm> 1}
+#  79: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2221{[0]: ValueNode<Primitive> Return, [1]: y}
+#  81: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2222{[0]: ValueNode<Primitive> MakeTuple, [1]: ValueNode<StringImm> __py_exec_index1_getattr__, [2]: ValueNode<StringImm> __py_exec_index2_getattr__}
+#  82: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2223{[0]: ValueNode<Primitive> MakeTuple, [1]: step_embedding, [2]: ValueNode<StringImm> swapaxes}
+#  83: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2224{[0]: ValueNode<Primitive> make_dict, [1]: CNode_2222, [2]: CNode_2223}
+#  84: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2225{[0]: ValueNode<Primitive> MakeTuple, [1]: ValueNode<StringImm> __py_exec_index1_getattr__, [2]: ValueNode<StringImm> __py_exec_index2_getattr__}
+#  85: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2226{[0]: ValueNode<Primitive> MakeTuple, [1]: x, [2]: ValueNode<StringImm> unsqueeze}
+#  86: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2227{[0]: ValueNode<Primitive> make_dict, [1]: CNode_2225, [2]: CNode_2226}
+#  87: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2228{[0]: ValueNode<Primitive> MakeTuple, [1]: ValueNode<StringImm> __py_exec_index1_getattr__, [2]: ValueNode<StringImm> __py_exec_index2_getattr__}
+#  88: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2229{[0]: ValueNode<Primitive> MakeTuple, [1]: y, [2]: ValueNode<StringImm> squeeze}
+#  89: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2230{[0]: ValueNode<Primitive> make_dict, [1]: CNode_2228, [2]: CNode_2229}
+#  91: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2231{[0]: ValueNode<Primitive> MakeTuple, [1]: ValueNode<StringImm> __py_exec_index1_getattr__, [2]: ValueNode<StringImm> __py_exec_index2_getattr__}
+#  92: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2232{[0]: ValueNode<Primitive> MakeTuple, [1]: param_x, [2]: ValueNode<StringImm> shape}
+#  93: @__main___TCN_MLP_with_Bias_Block_construct_2013:CNode_2233{[0]: ValueNode<Primitive> make_dict, [1]: CNode_2231, [2]: CNode_2232}
+
+
+subgraph attr:
+core: 1
+subgraph instance: UnpackCall_2014 : 00000209F2F83750
+
+subgraph @UnpackCall_2014(%para0_Parameter_2015, %para0_Parameter_2016, %para0_Parameter_2017) {
+  %0(CNode_2234) = TupleGetItem(%para0_Parameter_2016, I64(0))
+      : (<Tuple[Tuple[Any(Tensor)[Float32],Int64],Int64], TupleShape(TupleShape((-2), NoShape), NoShape)>, <Int64, NoShape>) -> (<Tuple[Any(Tensor)[Float32],Int64], TupleShape((-2), NoShape)>)
+      #scope: (Default)
+  %1(CNode_2235) = TupleGetItem(%para0_Parameter_2016, I64(1))
+      : (<Tuple[Tuple[Any(Tensor)[Float32],Int64],Int64], TupleShape(TupleShape((-2), NoShape), NoShape)>, <Int64, NoShape>) -> (<Int64, NoShape>)
+      #scope: (Default)
+  %2(CNode_2236) = dict_getitem(%para0_Parameter_2017, "dtype")
+      : (<Dictionary[[dtype,],[TypeType]], NoShape>, <String, NoShape>) -> (<TypeType, NoShape>)
+      #scope: (Default)
+  %3(CNode_2237) = make_keyword_arg("dtype", %2)
+      : (<String, NoShape>, <TypeType, NoShape>) -> (<Keyword[key : dtype, value : TypeType], NoShape>)
+      #scope: (Default)
+
+#------------------------> 11
+  %4(CNode_2238) = Parameter_2015(%0, %1, %3)
+      : (<Tuple[Any(Tensor)[Float32],Int64], TupleShape((-2), NoShape)>, <Int64, NoShape>, <Keyword[key : dtype, value : TypeType], NoShape>) -> (<null>)
+      #scope: (Default)
+  Return(%4)
+      : (<null>)
+      #scope: (Default)
+}
+# Order:
+#   1: @UnpackCall_2014:CNode_2238{[0]: param_Parameter_2015, [1]: CNode_2234, [2]: CNode_2235, [3]: CNode_2237}
+#   2: @UnpackCall_2014:CNode_2239{[0]: ValueNode<Primitive> Return, [1]: CNode_2238}
+
+
+subgraph attr:
+subgraph instance: full_2018 : 00000209F2F7C810
+# In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:340~387, 0~57/def full(shape, fill_value, dtype=None):/
+subgraph @full_2018(%para0_shape, %para0_fill_value, %para0_dtype) {
+  %0(CNode_2240) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], not_)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370, 7~46/    if not isinstance(fill_value, ARRAY_TYPES):/
+  %1(CNode_2241) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.numpy.array_creations'], isinstance)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370, 11~21/    if not isinstance(fill_value, ARRAY_TYPES):/
+  %2(CNode_2242) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.numpy.array_creations'], ARRAY_TYPES)
+      : (<External, NoShape>, <External, NoShape>) -> (<Tuple[TypeType*6], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape, NoShape)>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370, 34~45/    if not isinstance(fill_value, ARRAY_TYPES):/
+  %3(CNode_2243) = %1(%para0_fill_value, %2)
+      : (<Int64, NoShape>, <Tuple[TypeType*6], TupleShape(NoShape, NoShape, NoShape, NoShape, NoShape, NoShape)>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370, 11~46/    if not isinstance(fill_value, ARRAY_TYPES):/
+  %4(CNode_2244) = %0(%3)
+      : (<Bool, NoShape>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370, 7~46/    if not isinstance(fill_value, ARRAY_TYPES):/
+  %5(CNode_2245) = Cond(%4, Bool(0))
+      : (<Bool, NoShape>, <Bool, NoShape>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370~371, 4~108/    if not isinstance(fill_value, ARRAY_TYPES):/
+  %6(CNode_2246) = Switch(%5, @full_2247, @full_2019)
+      : (<Bool, NoShape>, <Func, NoShape>, <Func, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370~371, 4~108/    if not isinstance(fill_value, ARRAY_TYPES):/
+
+#------------------------> 12
+  %7(CNode_2248) = %6()
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370~371, 4~108/    if not isinstance(fill_value, ARRAY_TYPES):/
+  Return(%7)
+      : (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370~371, 4~108/    if not isinstance(fill_value, ARRAY_TYPES):/
+}
+# Order:
+#   1: @full_2018:CNode_2249{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> _check_shape}
+#   2: @full_2250:CNode_2251{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   3: @full_2018:shape{[0]: CNode_2249, [1]: param_shape}
+#   4: @full_2018:CNode_2240{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> not_}
+#   5: @full_2018:CNode_2241{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> isinstance}
+#   6: @full_2018:CNode_2242{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> ARRAY_TYPES}
+#   7: @full_2250:CNode_2252{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   8: @full_2018:CNode_2243{[0]: CNode_2241, [1]: param_fill_value, [2]: CNode_2242}
+#   9: @full_2018:CNode_2244{[0]: CNode_2240, [1]: CNode_2243}
+#  10: @full_2018:CNode_2245{[0]: ValueNode<Primitive> Cond, [1]: CNode_2244, [2]: ValueNode<BoolImm> false}
+#  11: @full_2018:CNode_2253{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> _raise_type_error}
+#  12: @full_2018:CNode_2246{[0]: ValueNode<Primitive> Switch, [1]: CNode_2245, [2]: ValueNode<FuncGraph> full_2247, [3]: ValueNode<FuncGraph> full_2019}
+#  13: @full_2018:CNode_2248{[0]: CNode_2246}
+#  14: @full_2018:CNode_2254{[0]: ValueNode<Primitive> Return, [1]: CNode_2248}
+#  15: @full_2018:CNode_2255{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> _check_dtype}
+#  16: @full_2018:CNode_2256{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> int}
+#  17: @full_2018:CNode_2257{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> float}
+#  18: @full_2018:CNode_2258{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> bool}
+#  19: @full_2018:CNode_2259{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> _get_dtype_from_scalar}
+#  20: @full_2018:CNode_2260{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> _is_shape_empty}
+#  21: @full_2018:CNode_2261{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> F}
+#  22: @full_2018:CNode_2262{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> list}
+#  23: @full_2018:CNode_2263{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> tuple}
+#  24: @full_2018:CNode_2264{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> asarray_const}
+#  25: @full_2018:CNode_2265{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> broadcast_to}
+#  26: @full_2018:CNode_2266{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> _convert_64_to_32}
+#  27: @full_2018:CNode_2267{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.numpy.array_creations', [2]: ValueNode<Symbol> empty_compile}
+
+
+subgraph attr:
+subgraph instance: full_2019 : 00000209F2F7CDA0
+# In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:340~387, 0~57/def full(shape, fill_value, dtype=None):/
+subgraph @full_2019 parent: [subgraph @full_2018]() {
+
+#------------------------> 13
+  %0(CNode_2268) = call @full_2020()
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~52/
+  Return(%0)
+      : (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:370~371, 4~108/    if not isinstance(fill_value, ARRAY_TYPES):/
+}
+# Order:
+#   1: @full_2269:CNode_2270{[0]: ValueNode<FuncGraph> full_2271, [1]: param_dtype, [2]: CNode_2272, [3]: CNode_2273, [4]: param_fill_value, [5]: CNode_2274, [6]: CNode_2275, [7]: CNode_2276, [8]: CNode_2277, [9]: CNode_2278, [10]: shape, [11]: CNode_2279, [12]: CNode_2280, [13]: CNode_2281, [14]: CNode_2282, [15]: CNode_2283, [16]: CNode_2284, [17]: CNode_2285}
+#   2: @full_2019:CNode_2286{[0]: ValueNode<Primitive> Return, [1]: CNode_2268}
+#   3: @full_2019:CNode_2268{[0]: ValueNode<FuncGraph> full_2020}
+
+
+subgraph attr:
+after_block: 1
+subgraph instance: full_2020 : 00000209F2F863D0
+# In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:340~387, 0~57/def full(shape, fill_value, dtype=None):/
+subgraph @full_2020 parent: [subgraph @full_2018]() {
+  %0(CNode_2287) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], is_not)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:372, 7~24/    if dtype is not None:/
+  %1(CNode_2288) = extract_keyword_arg("dtype", %para0_dtype)
+      : (<String, NoShape>, <Keyword[key : dtype, value : TypeType], NoShape>) -> (<TypeType, NoShape>)
+      #scope: (Default)
+  %2(CNode_2289) = %0(%1, None)
+      : (<TypeType, NoShape>, <None, NoShape>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:372, 7~24/    if dtype is not None:/
+  %3(CNode_2290) = Cond(%2, Bool(0))
+      : (<Bool, NoShape>, <Bool, NoShape>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:372~378, 4~36/    if dtype is not None:/
+  %4(CNode_2291) = Switch(%3, @full_2292, @full_2293)
+      : (<Bool, NoShape>, <Func, NoShape>, <Func, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:372~378, 4~36/    if dtype is not None:/
+  %5(CNode_2294) = %4()
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:372~378, 4~36/    if dtype is not None:/
+
+#------------------------> 14
+  %6(CNode_2295) = call @full_2021(%5)
+      : (<TypeType, NoShape>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\申健强\AppData\Local\Temp\ipykernel_34984\726274603.py:38, 44~52/
+  Return(%6)
+      : (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:372~378, 4~36/    if dtype is not None:/
+}
+# Order:
+#   1: @full_2020:CNode_2287{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> is_not}
+#   2: @full_2020:CNode_2289{[0]: CNode_2287, [1]: CNode_2288, [2]: ValueNode<None> None}
+#   3: @full_2020:CNode_2290{[0]: ValueNode<Primitive> Cond, [1]: CNode_2289, [2]: ValueNode<BoolImm> false}
+#   4: @full_2020:CNode_2291{[0]: ValueNode<Primitive> Switch, [1]: CNode_2290, [2]: ValueNode<FuncGraph> full_2292, [3]: ValueNode<FuncGraph> full_2293}
+#   5: @full_2020:CNode_2294{[0]: CNode_2291}
+#   6: @full_2020:CNode_2295{[0]: ValueNode<FuncGraph> full_2021, [1]: CNode_2294}
+#   7: @full_2020:CNode_2296{[0]: ValueNode<Primitive> Return, [1]: CNode_2295}
+
+
+subgraph attr:
+after_block: 1
+subgraph instance: full_2021 : 00000209F2F8FF90
+# In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:340~387, 0~57/def full(shape, fill_value, dtype=None):/
+subgraph @full_2021 parent: [subgraph @full_2018](%para0_phi_dtype) {
+  %0(CNode_2297) = resolve(NameSpace[Ast: 'Namespace:mindspore._extends.parse.trope'], not_)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380, 7~33/    if not _is_shape_empty(shape):/
+  %1(CNode_2260) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.numpy.array_creations'], _is_shape_empty)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380, 11~26/    if not _is_shape_empty(shape):/
+  %2(CNode_2249) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.numpy.array_creations'], _check_shape)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:369, 12~24/    shape = _check_shape(shape)/
+  %3(shape) = %2(%para0_shape)
+      : (<Tuple[Any(Tensor)[Float32],Int64], TupleShape((-2), NoShape)>) -> (<Any(Tensor)[Float64], (-2)>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:369, 12~31/    shape = _check_shape(shape)/
+  %4(CNode_2298) = %1(%3)
+      : (<Any(Tensor)[Float64], (-2)>) -> (<Any(Tensor)[Float64], (-2)>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380, 11~33/    if not _is_shape_empty(shape):/
+  %5(CNode_2299) = %0(%4)
+      : (<Any(Tensor)[Float64], (-2)>) -> (<Any(Tensor)[Float64], (-2)>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380, 7~33/    if not _is_shape_empty(shape):/
+  %6(CNode_2300) = Cond(%5, Bool(0))
+      : (<Any(Tensor)[Float64], (-2)>, <Bool, NoShape>) -> (<Tensor[Bool], (-1)>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380~385, 4~46/    if not _is_shape_empty(shape):/
+  %7(CNode_2301) = Switch(%6, @full_1999, @full_2000)
+      : (<Tensor[Bool], (-1)>, <Func, NoShape>, <Func, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380~385, 4~46/    if not _is_shape_empty(shape):/
+
+#------------------------> 15
+  %8(CNode_2302) = %7()
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380~385, 4~46/    if not _is_shape_empty(shape):/
+  Return(%8)
+      : (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380~385, 4~46/    if not _is_shape_empty(shape):/
+}
+# Order:
+#   1: @full_2021:CNode_2297{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> Ast: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> not_}
+#   2: @full_2303:CNode_2304{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   3: @full_2021:CNode_2298{[0]: CNode_2260, [1]: shape}
+#   4: @full_2021:CNode_2299{[0]: CNode_2297, [1]: CNode_2298}
+#   5: @full_2021:CNode_2300{[0]: ValueNode<Primitive> Cond, [1]: CNode_2299, [2]: ValueNode<BoolImm> false}
+#   6: @full_2021:CNode_2301{[0]: ValueNode<Primitive> Switch, [1]: CNode_2300, [2]: ValueNode<FuncGraph> full_1999, [3]: ValueNode<FuncGraph> full_2000}
+#   7: @full_2021:CNode_2302{[0]: CNode_2301}
+#   8: @full_2021:CNode_2305{[0]: ValueNode<Primitive> Return, [1]: CNode_2302}
+
+
+subgraph attr:
+subgraph instance: full_2000 : 00000209F2F8E950
+# In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:340~387, 0~57/def full(shape, fill_value, dtype=None):/
+subgraph @full_2000 parent: [subgraph @full_2021]() {
+
+#------------------------> 16
+  %0(CNode_2306) = call @full_2022()
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380~385, 4~46/    if not _is_shape_empty(shape):/
+  Return(%0)
+      : (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:380~385, 4~46/    if not _is_shape_empty(shape):/
+}
+# Order:
+#   1: @full_2000:CNode_2306{[0]: ValueNode<FuncGraph> full_2022}
+#   2: @full_2000:CNode_2307{[0]: ValueNode<Primitive> Return, [1]: CNode_2306}
+
+
+subgraph attr:
+after_block: 1
+subgraph instance: full_2022 : 00000209F2F88AC0
+# In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:340~387, 0~57/def full(shape, fill_value, dtype=None):/
+subgraph @full_2022 parent: [subgraph @full_2021]() {
+  %0(CNode_2266) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.numpy.array_creations'], _convert_64_to_32)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:387, 11~28/    return _convert_64_to_32(empty_compile(dtype, shape))/
+  %1(CNode_2267) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.numpy.array_creations'], empty_compile)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:387, 29~42/    return _convert_64_to_32(empty_compile(dtype, shape))/
+  %2(CNode_2249) = resolve(NameSpace[SymbolStr: 'Namespace:mindspore.numpy.array_creations'], _check_shape)
+      : (<External, NoShape>, <External, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:369, 12~24/    shape = _check_shape(shape)/
+  %3(shape) = %2(%para0_shape)
+      : (<Tuple[Any(Tensor)[Float32],Int64], TupleShape((-2), NoShape)>) -> (<Any(Tensor)[Float64], (-2)>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:369, 12~31/    shape = _check_shape(shape)/
+
+#------------------------> 17
+  %4(CNode_2308) = %1($(@full_2021:para0_phi_dtype), %3)
+      : (<TypeType, NoShape>, <Any(Tensor)[Float64], (-2)>) -> (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:387, 29~56/    return _convert_64_to_32(empty_compile(dtype, shape))/
+  %5(CNode_2309) = %0(%4)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:387, 11~57/    return _convert_64_to_32(empty_compile(dtype, shape))/
+  Return(%5)
+      : (<null>)
+      #scope: (Default)
+      # In file d:\withoutchinese_anaconda\envs\TSF_M\Lib\site-packages\mindspore\numpy\array_creations.py:387, 4~57/    return _convert_64_to_32(empty_compile(dtype, shape))/
+}
+# Order:
+#   1: @full_2310:CNode_2311{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   2: @full_2022:CNode_2308{[0]: CNode_2267, [1]: param_phi_dtype, [2]: shape}
+#   3: @full_2310:CNode_2312{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   4: @full_2022:CNode_2309{[0]: CNode_2266, [1]: CNode_2308}
+#   5: @full_2022:CNode_2313{[0]: ValueNode<Primitive> Return, [1]: CNode_2309}
+
+
+# ===============================================================================================
+# The total of function graphs in evaluation stack: 16/22 (Ignored 6 internal frames).
+# ===============================================================================================
+
+
+# ===============================================================================================
+# The rest function graphs are the following:
+# ===============================================================================================
+No more function graphs.
+
